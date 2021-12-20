@@ -27,49 +27,49 @@
 -define(APPNAME, prometheus_process_collector).
 -define(LIBNAME, prometheus_process_collector).
 
--define(METRICS, [{process_open_fds, gauge,
-                   "Number of open file descriptors."},
-                  {process_max_fds, gauge,
-                   "Maximum number of open file descriptors."},
-                  {process_start_time_seconds, gauge,
-                   "Start time of the process since unix epoch in seconds."},
-                  {process_uptime_seconds, counter,
-                   "Process uptime in seconds."},
-                  {process_threads_total, gauge,
-                   "Process Threads count."},
-                  {process_virtual_memory_bytes, gauge,
-                   "Virtual memory size in bytes."},
-                  {process_resident_memory_bytes, gauge,
+-define(METRICS, [{process_resident_memory_bytes, gauge,
                    "Resident memory size in bytes."},
-                  {process_cpu_seconds_total, counter,
-                   "Process CPU seconds total.",
-                   fun(Info) ->
-                       counter_metrics([{[{kind, utime}],
-                                         proplists:get_value(process_utime_seconds, Info)},
-                                        {[{kind, stime}],
-                                         proplists:get_value(process_stime_seconds, Info)}])
-                   end},
-                  {process_max_resident_memory_bytes, gauge,
-                   "Maximum resident set size used."},
-                  {process_noio_pagefaults_total, counter,
-                   "Number of page faules serviced without any I/O activity."},
-                  {process_io_pagefaults_total, counter,
-                   "Number of page faults serviced that required I/O activity."},
-                  {process_swaps_total, counter,
-                   "Number of times a process was \"swapped\" out of main memory."},
-                  {process_disk_reads_total, counter,
-                   "Number of times the file system had to perform input."},
-                  {process_disk_writes_total, counter,
-                   "Number of times the file system had to perform output."},
-                  {process_signals_delivered_total, counter,
-                   "Number of signals delivered."},
-                  {process_voluntary_context_switches_total, counter,
-                   "Number of times a context switch resulted due to a "
-                   "process voluntarily giving up the processor."},
-                  {process_involuntary_context_switches_total, counter,
-                   "Number of times a context switch resulted due to a "
-                   "higher priority process becoming runnable or because the "
-                   "current process exceeded its time slice."}
+%                   {process_open_fds, gauge,
+%                    "Number of open file descriptors."},
+%                   {process_max_fds, gauge,
+%                    "Maximum number of open file descriptors."},
+%                   {process_start_time_seconds, gauge,
+%                    "Start time of the process since unix epoch in seconds."},
+%                   {process_uptime_seconds, counter,
+%                    "Process uptime in seconds."},
+%                   {process_threads_total, gauge,
+%                    "Process Threads count."},
+%                   {process_virtual_memory_bytes, gauge,
+%                    "Virtual memory size in bytes."},
+%                   {process_cpu_seconds_total, counter,
+%                    "Process CPU seconds total.",
+%                    fun(Info) ->
+%                        counter_metrics([{[{kind, utime}],
+%                                          proplists:get_value(process_utime_seconds, Info)},
+%                                         {[{kind, stime}],
+%                                          proplists:get_value(process_stime_seconds, Info)}])
+%                    end},
+%                   {process_max_resident_memory_bytes, gauge,
+%                    "Maximum resident set size used."},
+%                   {process_noio_pagefaults_total, counter,
+%                    "Number of page faules serviced without any I/O activity."},
+%                   {process_io_pagefaults_total, counter,
+%                    "Number of page faults serviced that required I/O activity."},
+%                   {process_swaps_total, counter,
+%                    "Number of times a process was \"swapped\" out of main memory."},
+%                   {process_disk_reads_total, counter,
+%                    "Number of times the file system had to perform input."},
+%                   {process_disk_writes_total, counter,
+%                    "Number of times the file system had to perform output."},
+%                   {process_signals_delivered_total, counter,
+%                    "Number of signals delivered."},
+%                   {process_voluntary_context_switches_total, counter,
+%                    "Number of times a context switch resulted due to a "
+%                    "process voluntarily giving up the processor."},
+%                   {process_involuntary_context_switches_total, counter,
+%                    "Number of times a context switch resulted due to a "
+%                    "higher priority process becoming runnable or because the "
+%                    "current process exceeded its time slice."}
                  ]).
 
 %% API exports
