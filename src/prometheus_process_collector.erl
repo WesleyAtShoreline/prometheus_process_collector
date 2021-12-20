@@ -28,7 +28,7 @@
 -define(LIBNAME, prometheus_process_collector).
 
 -define(METRICS, [{process_resident_memory_bytes, gauge,
-                   "Resident memory size in bytes."},
+                   "Resident memory size in bytes."}
 %                   {process_open_fds, gauge,
 %                    "Number of open file descriptors."},
 %                   {process_max_fds, gauge,
